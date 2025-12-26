@@ -130,9 +130,16 @@ void FunctionCalculatorMain() //계산기(덧셈, 뺄셈, 곱셈, 나눗셈)
 	else if (op == '/')
 	{
 		printf("%d / %d = %f \n", a, b, Div((float)a, (float)b));
+		//%f : %float 
+		// (변수형)변수 : 형변환(casting) → 받은 변수의 값을 ()안의 변수형으로 변환
 	}
 
 	//실수를 확인하고 싶다. → 0~1사이의 값 : 실제 물건을 나누었을 때
+	//일반적으로 오류가 없도록 처리하기 위해 int보다는 float 값으로 많이 처리한다. (int는 소숫점을 버리기 때문에 오차)
+
+	//double(배정밀도) → float(단정밀도) → long float(확장정밀도) → decimal(고정소수점)
+	//정밀도가 높을수록 메모리를 많이 차지.
+	
 }
 
 
