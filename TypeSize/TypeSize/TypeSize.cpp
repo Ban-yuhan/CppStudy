@@ -105,7 +105,7 @@ void InitMaxTestMain()
 	printf("Max int: %d\n", maxInt);
 	printf("Max unsigned int: %u\n", maxUInt);
 }
-//평균을 구하는 공식 
+//평균을 구하는 공식. (평균값)은 미리 (몇 개)를 받을 지 지정하고 그만큼 (입력)을 받아 합계를 구해 (평균)을 구한다. → 변수 4개 
 //데이터: 입력받은값, 합계, 개수
 // 
 //알고리즘: 1.반복할 횟수를 입력한다.
@@ -116,10 +116,10 @@ void InitMaxTestMain()
 
 void AvgCalculator()
 {
-	int inputValue = 0;
-	int sumValue = 0;
-	int countValue = 0;
-	printf("InputCount:");
+	int inputValue = 0; 
+	int sumValue = 0; 
+	int countValue = 0; 
+ 	printf("InputCount:");
 	scanf_s("%d", &countValue); //1.반복할 횟수를 입력한다 //5
 	for (int i = 0; i < countValue; i++)//2.반복문을 통해서  // 0, 5 //1, 5
 	{
@@ -130,7 +130,8 @@ void AvgCalculator()
 	int avgValue = sumValue / countValue; //평균을 횟수가 입력값을 모두 더한 값을 개수로 나누어 저장한다.
 	printf("Sum / Avg: %d / %d\n", sumValue, avgValue);//평균값을 출력한다.
 }
-//평균을 구하는 공식 
+
+//평균을 구하는 공식.						
 //데이터: 입력받은값, 합계, 개수
 // 
 //알고리즘: 1.반복할 횟수를 입력한다.
@@ -164,7 +165,7 @@ void AvgCalculatorInputValueCheck()
 {
 	int inputValue = 0;
 	int sumValue = 0;
-	const int countValue = 5; //배열의 크기는 변경이 불가능하므로 처음부터 5로고정하고, 변경은 불가능하도록 만든다.
+	const int countValue = 5; //배열의 크기는 변경이 불가능하므로 처음부터 5로고정하고, 변경은 불가능하도록 만든다(const). const로 선언하지 않으면 오류 발생.
 	int ArrayInputValues[countValue] = { 0, }; //입력할 값 5개를 저장하기위해서 배열을 만든다.
 
 	for (int i = 0; i < countValue; i++)//2.반복문을 통해서  // 0, 5 //1, 5
@@ -199,3 +200,23 @@ void main()
 	//AvgCalculatorWithWhile();
 	AvgCalculatorInputValueCheck();
 }
+
+// 배열의 특징 : 연속적으로 데이터 저정
+//   123
+// 1 OOO
+// 2 OOO
+// 3 OOO
+//Display[3][3] → C++에서는 이렇게 2차원 배열을 작성
+// 
+//input Player1 x,y : 1, 1
+//   123
+// 1 XOO
+// 2 OOO
+// 3 OOO
+// 
+//input Player2 x,y : 1, 2
+//   123
+// 1 XZO
+// 2 OOO
+// 3 OOO
+
