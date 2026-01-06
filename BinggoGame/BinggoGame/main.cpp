@@ -110,17 +110,18 @@ void BingoGame()
 			winCheck[0] = true;
         }*/
 
-        /*for (i == 0;i <= 2; ++i)
+        for (i == 0;i <= 2; ++i)
         {
             if (displayArray[0][i] == 'X' && displayArray[1][i] == 'X' && displayArray[2][i] == 'X')
             {
 				winCheck[0] = true;
-
+                printf("i : %d", i);
+                printf("%d", winCheck[0]);
             }
-        }*/
+        }
 
 
-        if (displayArray[0][0] == 'X' && displayArray[1][0] == 'X' && displayArray[2][0] == 'X')
+        /*if (displayArray[0][0] == 'X' && displayArray[1][0] == 'X' && displayArray[2][0] == 'X')
         {
 			winCheck[0] = true;
         }
@@ -131,7 +132,7 @@ void BingoGame()
         if (displayArray[0][2] == 'X' && displayArray[1][2] == 'X' && displayArray[2][2] == 'X')
         {
 			winCheck[0] = true;
-        }
+        }*/
         
 
 
