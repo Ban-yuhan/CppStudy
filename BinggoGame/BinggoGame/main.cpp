@@ -70,12 +70,19 @@ void BingoGame()
         {
 			printf("이미 선택된 칸입니다. 다시 선택해주세요.\n");
         }
+        
+        else 
+        {
+			printf("잘못된 입력입니다. 다시 선택해주세요.\n");
+        }
               
 
         //데이터의 승리조건을 체크하여 승리조건이 맞는지 확인한다.
         int i = 0;
 
 		//player1 승리조건 체크
+
+        //가로방향 체크
         for (i == 0;i <= 2;++i)
         {
             if (displayArray[i][0] == 'X' && displayArray[i][1] == 'X' && displayArray[i][2] == 'X')
@@ -84,7 +91,16 @@ void BingoGame()
             }
         }
 
+		//세로방향 체크
+        for (i = 0; i <= 2; ++i)
+        {
+            if (displayArray[0][i] == 'X' && displayArray[1][i] == 'X' && displayArray[2][i] == 'X')
+            {
+                winCheck[0] = true;
+            }
+        }
       
+		//대각선방향 체크
         if (displayArray[0][0] == 'X' && displayArray[1][1] == 'X' && displayArray[2][2] == 'X')
         {
             winCheck[0] = true;
@@ -109,17 +125,7 @@ void BingoGame()
 		{
 			winCheck[0] = true;
         }*/
-
-        for (i == 0;i <= 2; ++i)
-        {
-            if (displayArray[0][i] == 'X' && displayArray[1][i] == 'X' && displayArray[2][i] == 'X')
-            {
-				winCheck[0] = true;
-                printf("i : %d", i);
-                printf("%d", winCheck[0]);
-            }
-        }
-
+             
 
         /*if (displayArray[0][0] == 'X' && displayArray[1][0] == 'X' && displayArray[2][0] == 'X')
         {
@@ -133,24 +139,38 @@ void BingoGame()
         {
 			winCheck[0] = true;
         }*/
+
+        
         
 
 
 
 		//player2 승리조건 체크
 
-        for (i == 0;i <= 2;++i)
+		//가로방향 체크
+        for (i = 0;i <= 2;++i)
 		{
-            if (displayArray[i][0] == '@' && displayArray[i][1] == '@' && displayArray[i][2] == '@') 
+			if (displayArray[i][0] == '@' && displayArray[i][1] == '@' && displayArray[i][2] == '@')
             {
 				winCheck[1] = true;
             }
 		}
 
+		//세로방향 체크
+        for (i = 0; i <= 2; ++i)
+        {
+            if (displayArray[0][i] == '@' && displayArray[1][i] == '@' && displayArray[2][i] == '@')
+            {
+                winCheck[1] = true;
+            }
+        }
+
+		//대각선방향 체크
        if (displayArray[0][0] == '@' && displayArray[1][1] == '@' && displayArray[2][2] == '@')
         {
             winCheck[1] = true;
         }
+       
         if (displayArray[0][2] == '@' && displayArray[1][1] == '@' && displayArray[2][0] == '@')
         {
             winCheck[1] = true;
@@ -170,17 +190,7 @@ void BingoGame()
             winCheck[1] = true;
         }*/
         
-
-       /* for (i == 0;i <= 2; ++i)
-        {
-            if (displayArray[0][i] == '@' && displayArray[1][i] == '@' && displayArray[2][i] == '@')
-            {
-                winCheck[1] = true;
-            }
-        }*/
-
-        
-        if (displayArray[0][0] == '@' && displayArray[1][0] == '@' && displayArray[2][0] == '@')
+        /*if (displayArray[0][0] == '@' && displayArray[1][0] == '@' && displayArray[2][0] == '@')
         {
             winCheck[1] = true;
         }
@@ -191,10 +201,10 @@ void BingoGame()
         if (displayArray[0][2] == '@' && displayArray[1][2] == '@' && displayArray[2][2] == '@')
         {
             winCheck[1] = true;
-        }     
+        }    */ 
       
 
-        if (winCheck[0] || winCheck[1])
+        if (winCheck[0] == true || winCheck[1] == true)
             break;
     }
 
