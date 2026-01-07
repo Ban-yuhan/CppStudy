@@ -66,12 +66,12 @@ void BingoGame()
             printf("\n");
 		}
 
-        else if( displayArray[y][x] != 'O')
+        else if( x < 3 && y < 3 && displayArray[y][x] != 'O')
         {
 			printf("이미 선택된 칸입니다. 다시 선택해주세요.\n");
         }
         
-        else 
+        else if(x > 2 || y > 2)
         {
 			printf("잘못된 입력입니다. 다시 선택해주세요.\n");
         }
@@ -83,7 +83,7 @@ void BingoGame()
 		//player1 승리조건 체크
 
         //가로방향 체크
-        for (i == 0;i <= 2;++i)
+        for (i = 0;i <= 2;++i)
         {
             if (displayArray[i][0] == 'X' && displayArray[i][1] == 'X' && displayArray[i][2] == 'X')
             {
@@ -142,9 +142,6 @@ void BingoGame()
 
         
         
-
-
-
 		//player2 승리조건 체크
 
 		//가로방향 체크
@@ -204,7 +201,7 @@ void BingoGame()
         }    */ 
       
 
-        if (winCheck[0] == true || winCheck[1] == true)
+        if (winCheck[0]|| winCheck[1])
             break;
     }
 
