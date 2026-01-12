@@ -88,7 +88,7 @@ namespace Mockup
 			if(m_pStr != NULL) delete[] m_pStr;
 		}
 
-		string(string& str)
+		string(string& str) //복사생성자
 		{
 			//*this = str;
 			int nSize = strlen(str.c_str());
